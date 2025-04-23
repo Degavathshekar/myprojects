@@ -1,0 +1,23 @@
+/* app.component.css */
+.app-container {
+    padding: 16px;
+  }
+  
+  .board-container {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  .board-columns {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .board-column {
+    width: 30%;
+  }
+  
+  .task-card {
+    margin-bottom: 16px;
+  }
+  

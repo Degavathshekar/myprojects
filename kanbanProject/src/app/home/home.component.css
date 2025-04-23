@@ -1,0 +1,66 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+.page-title h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+button {
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.main-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+mat-nav-list {
+    width: 100%;
+}
+
+a.mat-list-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+a.mat-list-item:hover {
+    background-color: #e0e0e0;
+}
+
+.kanban-title {
+    font-size: 1.2rem;
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+.mat-list-item {
+    background-color: #f5f5f5;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.mat-list-item:hover {
+    background-color: #ddd;
+}
