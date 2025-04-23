@@ -1,0 +1,88 @@
+<div class="board-container">
+  <div class="board-header">
+    <h1>{{board.title}}</h1>
+    <button mat-icon-button (click)="deleteBoard(board.id)" class="delete-board-button">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <div class="button-container">
+    <button mat-raised-button (click)="openDialogForNewTask()">+ Create Task</button>
+    <button mat-raised-button routerLink="/home" class="home-button" >Home</button>
+  </div>
+  <div class="kanban-board">
+    <div class="list-container">
+      <h2>To Do ({{todos.length}})</h2> 
+      <div
+        cdkDropList
+        id="todo"
+        [cdkDropListData]="todos"
+        [cdkDropListConnectedTo]="['inpro', 'done']"
+        class="board-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="sticky-note" *ngFor="let task of todos" cdkDrag
+          [style.background-color]="task.colour"
+          (dblclick)="openTaskDialog(task)"
+          id="{{task.id}}">
+          <button mat-icon-button (click)="deleteTask(task.id)" class="delete-button">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <div class="task-content">
+            <p class="task-title">{{task.title}}</p>
+            <p class="task-description">{{task.description}}</p>
+            <p class="task-deadline">To Do</p>
+            <p class="task-deadline">Deadline: {{task.deadline | date:'yyyy-MM-dd'}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-container">
+      <h2>In Progress ({{inprogress.length}})</h2>
+      <div
+        cdkDropList
+        id="inpro"
+        [cdkDropListData]="inprogress"
+        [cdkDropListConnectedTo]="['todo', 'done']"
+        class="board-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="sticky-note" *ngFor="let task of inprogress" cdkDrag
+          [style.background-color]="task.colour"
+          (dblclick)="openTaskDialog(task)"
+          id="{{task.id}}">
+          <button mat-icon-button (click)="deleteTask(task.id)" class="delete-button">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <div class="task-content">
+            <p class="task-title">{{task.title}}</p>
+            <p class="task-description">{{task.description}}</p>
+            <p class="task-deadline">Inprogress</p>
+            <p class="task-deadline">Deadline: {{task.deadline | date:'yyyy-MM-dd'}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-container">
+      <h2>Done ({{dones.length}})</h2>
+      <div
+        cdkDropList
+        id="done"
+        [cdkDropListData]="dones"
+        [cdkDropListConnectedTo]="['todo', 'inpro']"
+        class="board-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="sticky-note" *ngFor="let task of dones" cdkDrag
+          [style.background-color]="task.colour"
+          (dblclick)="openTaskDialog(task)"
+          id="{{task.id}}">
+          <button mat-icon-button (click)="deleteTask(task.id)" class="delete-button">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <div class="task-content">
+            <p class="task-title">{{task.title}}</p>
+            <p class="task-description">{{task.description}}</p>
+            <p class="task-deadline">status: Task done</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

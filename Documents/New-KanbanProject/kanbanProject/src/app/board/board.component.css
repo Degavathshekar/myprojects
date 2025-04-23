@@ -1,0 +1,124 @@
+/* Base styles */
+.board-container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 5px;
+ 
+}
+.board-header h1{
+  color: chocolate;
+}
+.home-button{
+  color: blue;
+} 
+
+.board-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.delete-board-button {
+  color: red;
+}
+
+.button-container {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 10px;
+
+}
+
+.kanban-board {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-container {
+  width: 30%;
+}
+
+.board-list {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-height: 400px;
+  padding: 8px;
+  background-color: #f9f9f9;
+}
+
+.sticky-note {
+  margin: 4px;
+  padding: 8px;
+  border-radius: 4px;
+  color: #000;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.delete-button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+
+.task-content {
+  padding: 4px;
+}
+
+.task-title {
+  font-weight: bold;
+}
+
+.task-description {
+  margin: 4px 0;
+}
+
+.task-deadline {
+  color: #666;
+}
+
+/* Large screens (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .kanban-board {
+    justify-content: space-between;
+  }
+
+  .list-container {
+    width: 30%;
+  }
+}
+
+/* Medium screens (tablets, 768px to 1199px) */
+@media (min-width: 1200px) and (max-width: 1199px) {
+  .kanban-board {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .list-container {
+    width: 90%;
+    margin-bottom: 16px;
+  }
+}
+
+
+/* Small screens (phones, less than 768px) */
+@media (max-width: 767px) {
+  .kanban-board {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .list-container {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .board-list {
+    min-height: 300px; /* Smaller minimum height for smaller screens */
+  }
+}
